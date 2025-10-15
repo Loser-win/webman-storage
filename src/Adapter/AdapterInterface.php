@@ -31,4 +31,11 @@ interface AdapterInterface
      * @return mixed
      */
     public function uploadBase64(string $base64, string $extension = 'png');
+
+    /**
+     * @desc: 删除文件
+     *
+     * @return mixed
+     */
+    public function deleteFile(string $file_path);
 }

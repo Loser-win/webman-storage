@@ -109,6 +109,14 @@ abstract class AdapterAbstract implements AdapterInterface
     }
 
     /**
+     * @return array|bool
+     */
+    public function deleteFile(string $file_path)
+    {
+        return $this->setError(false, '暂不支持');
+    }
+
+    /**
      * @desc: 加载配置文件
      *
      * @author Tinywan(ShaoBo Wan)

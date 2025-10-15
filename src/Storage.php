@@ -17,6 +17,7 @@ namespace Tinywan\Storage;
  * @method static array uploadFile(array $config = [])  上传文件
  * @method static array uploadBase64(string $base64, string $extension = 'png') 上传Base64文件
  * @method static array uploadServerFile(string $file_path)  上传服务端文件
+ * @method static array deleteFile(string $file_path)  删除文件
  */
 class Storage
 {

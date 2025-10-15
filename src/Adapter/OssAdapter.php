@@ -138,4 +138,28 @@ class OssAdapter extends AdapterAbstract
 
         return $result;
     }
+
+    /**
+     * @desc: 删除服务端文件
+     *
+     * @throws OssException
+     *
+     * @author Tinywan(ShaoBo Wan)
+     */
+    public function deleteFile(string $file_path)
+    {
+        // TODO: Implement deleteFile() method.
+        $pos = strpos($file_path, $this->config['dirname'].$this->dirSeparator);
+        $object = substr($file_path, $pos);
+        try {
+
+            $result = $this->getInstance()->deleteObject($this->config['bucket'], $object);
+            if (!isset($result['info']) && 200 != $result['info']['http_code']) {
+                return $this->setError(false, (string) $result);
+            }
+        } catch (OssException $e) {
+            return $this->setError(false, $e->getMessage());
+        }
+    }
+
 }
